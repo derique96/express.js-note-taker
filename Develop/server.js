@@ -4,6 +4,7 @@ const path = require('path');
 const notesData = require('./db/db.json');
 const PORT = 3001;
 const app = express();
+const uuid = require('./helpers/uuid');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -23,16 +24,6 @@ app.get('/api/notes', (req, res) => {
     console.log(`${req.method} request received to add a title and text`);
 });
 
-// app.post('/api/notes', (req, res) => {
-//     res.json(`${req.method} request received to add a title and text`);
-//     console.info(`${req.method} request reveived to add a title and text`)
-// });
-
-
-
-
-
-
 
 app.post('/api/notes', (req, res) => {
     console.info`${req.method} request received to add title and text`
@@ -41,7 +32,8 @@ app.post('/api/notes', (req, res) => {
     if (title && text){
         const newNotes = {
             title,
-            text
+            text,
+            note_id: uuid(),
         };
 
         fs.readFile('./db/db.json', 'utf8', (err, data) => {
