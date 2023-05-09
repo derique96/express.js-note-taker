@@ -7,4 +7,8 @@
 ![Express.js note taker page screenshot](https://drive.google.com/file/d/1NwcyaaGWrJHlnz5DSjKaIoK8URYz2jVx/view?usp=share_link)
 
 ## Link
-# http://localhost:3001/notes
+### http://localhost:3001/notes
+
+
+## Developer
+### D'Erique Fowlkes
